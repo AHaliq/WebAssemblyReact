@@ -6,9 +6,9 @@
   "scripts": {
     "start": "webpack serve",
     "build": "webpack",
-    "deps": "bash ./scripts/build_deps.sh",
-    "cpp": "bash ./scripts/compile_cpp.sh",
-    "clean": "bash ./scripts/clean.sh"
+    "deps": "scripts/build_deps.sh",
+    "cpp": "scripts/compile_cpp.sh",
+    "clean": "scripts/clean.sh"
   },
   "keywords": [],
   "author": "",

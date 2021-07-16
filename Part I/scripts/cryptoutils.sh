@@ -21,6 +21,8 @@
 # The script builds and installs libff in the
 # _build directory of Scilla root.
 
+source ./deps/emsdk/emsdk_env.sh
+
 libCryptoUtilsdir="deps/cryptoutils"
 
 # Check if CWD has `package.json`, assuring us that it's the root.
@@ -43,7 +45,8 @@ cd src || exit
 
 echo "Installing libCryptoUtils into ${libCryptoUtilsdir}/install"
 cd ../build || exit
-if ! emcmake cmake ../src -DCMAKE_INSTALL_PREFIX=../install -DCRYPTOUTILS_BUILD_ARCHIVE=1 -DOPENSSL_ROOT_DIR=/usr/local/opt/openssl -DOPENSSL_INCLUDE_DIR=/usr/local/opt/openssl/include -DOPENSSL_CRYPTO_LIBRARY=/usr/local/opt/openssl/lib -DOPENSSL_LIBRARIES=/usr/local/opt/openssl/lib -DBoost_INCLUDE_DIR=/Users/haliq/Desktop/zkp_research/boost -DBOOST_ROOT=/Users/haliq/Desktop/zkp_research/boost -DBOOST_LIBRARYDIR=/Users/haliq/Desktop/zkp_research/boost/stage/lib
+#if ! emcmake cmake ../src -DCMAKE_INSTALL_PREFIX=../install -DCRYPTOUTILS_BUILD_ARCHIVE=1 -DOPENSSL_ROOT_DIR=/usr/local/opt/openssl -DOPENSSL_INCLUDE_DIR=/usr/local/opt/openssl/include -DOPENSSL_CRYPTO_LIBRARY=/usr/local/opt/openssl/lib -DOPENSSL_LIBRARIES=/usr/local/opt/openssl/lib -DBoost_INCLUDE_DIR=/Users/haliq/Desktop/zkp_research/boost -DBOOST_ROOT=/Users/haliq/Desktop/zkp_research/boost -DBOOST_LIBRARYDIR=/Users/haliq/Desktop/zkp_research/boost/stage/lib
+if ! emcmake cmake ../src -DCMAKE_INSTALL_PREFIX=../install -DCRYPTOUTILS_BUILD_ARCHIVE=1
 then
     echo "libCryptoUtils: CMake configuration failed"
     exit 1
