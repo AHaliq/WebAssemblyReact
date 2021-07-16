@@ -43,13 +43,13 @@ cd src || exit
 
 echo "Installing libCryptoUtils into ${libCryptoUtilsdir}/install"
 cd ../build || exit
-if ! cmake ../src -DCMAKE_INSTALL_PREFIX=../install -DCRYPTOUTILS_BUILD_ARCHIVE=1
+if ! emcmake cmake ../src -DCMAKE_INSTALL_PREFIX=../install -DCRYPTOUTILS_BUILD_ARCHIVE=1 -DOPENSSL_ROOT_DIR=/usr/local/opt/openssl -DOPENSSL_INCLUDE_DIR=/usr/local/opt/openssl/include -DOPENSSL_CRYPTO_LIBRARY=/usr/local/opt/openssl/lib -DOPENSSL_LIBRARIES=/usr/local/opt/openssl/lib -DBoost_INCLUDE_DIR=/Users/haliq/Desktop/zkp_research/boost -DBOOST_ROOT=/Users/haliq/Desktop/zkp_research/boost -DBOOST_LIBRARYDIR=/Users/haliq/Desktop/zkp_research/boost/stage/lib
 then
     echo "libCryptoUtils: CMake configuration failed"
     exit 1
 fi
 
-if ! make -j4 install
+if ! emmake make -j4 install
 then
     echo "libCryptoUtils: build failed"
     exit 1

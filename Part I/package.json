@@ -6,7 +6,9 @@
   "scripts": {
     "start": "webpack serve",
     "build": "webpack",
-    "cpp": "emcc -O3 --bind bindings/SampleBindings.cpp -Icpp/ cpp/*.cpp -s WASM=1 -s MODULARIZE=1 -o Sample.js"
+    "deps": "bash ./scripts/build_deps.sh",
+    "cpp": "bash ./scripts/compile_cpp.sh",
+    "clean": "bash ./scripts/clean.sh"
   },
   "keywords": [],
   "author": "",
