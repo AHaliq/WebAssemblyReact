@@ -2,3 +2,5 @@ node_modules
 */deps/*/build
 */deps/*/install
 .vscode
+dist
+_build

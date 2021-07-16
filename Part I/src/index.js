@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Sample from './Sample.js';
-import SampleWASM from './Sample.wasm';
+import Sample from '../_build/Sample.js';
+import SampleWASM from '../_build/Sample.wasm';
 
 const sample = Sample({
     locateFile: () => {

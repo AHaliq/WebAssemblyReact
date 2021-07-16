@@ -2,7 +2,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: path.resolve(__dirname, 'index.js'),
+    entry: path.resolve(__dirname, 'src/index.js'),
+    devtool: 'source-map',
     externals: {
         fs: 'empty',
     },
@@ -10,7 +11,7 @@ module.exports = {
     module: {
         rules: [
             {
-                include: [path.join(__dirname)],
+                include: [path.join(__dirname, 'src'), path.join(__dirname, '_build')],
                 test: /\.(js|jsx)$/,
                 loader: 'babel-loader',
                 options: {
@@ -24,5 +25,5 @@ module.exports = {
             },
         ],
     },
-    plugins: [new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'index.html') })],
+    plugins: [new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'src/index.html') })],
 };

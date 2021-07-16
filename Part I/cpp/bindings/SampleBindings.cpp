@@ -1,6 +1,6 @@
 #include <emscripten.h>
 #include <emscripten/bind.h>
-#include "Sample.h"
+#include "src/Sample.h"
 #include <string>
 
 using namespace emscripten;
