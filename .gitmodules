@@ -1,6 +1,0 @@
-[submodule "cryptoutils"]
-	path = deps/cryptoutils/src
-	url = git@github.com:Zilliqa/cryptoutils.git
-[submodule "deps/emsdk"]
-	path = deps/emsdk
-	url = https://github.com/emscripten-core/emsdk.git
