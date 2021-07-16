@@ -1,9 +1,22 @@
-## WebAssembly With React!
+## OVN libff wasm
 
-The associated medium posts are available at:
+you need to pull submodules
+```
+git submodule update --init --recursive
+```
 
-1. Part I: C++ To WebAssembly With React From Scratch!
-   https://guptanikhil.medium.com/using-webassembly-with-react-from-scratch-fba8cdfa5118.
+you need to install dependencies
+```
+npm run deps
+```
 
-2. Part II: OpenGL To WebAssembly With React!
-   https://guptanikhil.medium.com/part-ii-opengl-to-webassembly-with-react-8f15430ab6c6.
+you need to compile cpp files to wasm
+```
+npm run cpp
+```
+
+you can build or start dev server
+```
+npm run build
+npm run start
+```
