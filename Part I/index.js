@@ -12,6 +12,7 @@ const sample = Sample({
 
 sample.then((core) => {
     console.log(core.add(1, 2));
+    console.log(core.greet());
 });
 
 ReactDOM.render(
