@@ -1,3 +1,22 @@
-## C++ To WebAssembly With React From Scratch!
+## OVN libff wasm
 
-The associated medium post is available at https://guptanikhil.medium.com/using-webassembly-with-react-from-scratch-fba8cdfa5118.
+you need to pull submodules
+```
+git submodule update --init --recursive
+```
+
+you need to install dependencies
+```
+npm run deps
+```
+
+you need to compile cpp files to wasm
+```
+npm run cpp
+```
+
+you can build or start dev server
+```
+npm run build
+npm run start
+```
