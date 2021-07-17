@@ -9,6 +9,8 @@
     "deps": "scripts/build_deps.sh",
     "cpp": "scripts/compile_cpp.sh",
     "clean": "scripts/clean.sh",
+    "clean:boost": "rm -rf ./deps/boost_1_64_0",
+    "clean:cutil": "rm -rf ./deps/cryptoutils/{build,install}",
     "all:server": "npm run clean && npm run deps && npm run cpp && npm run start"
   },
   "keywords": [],

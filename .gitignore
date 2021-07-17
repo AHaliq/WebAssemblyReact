@@ -1,6 +1,7 @@
 node_modules
 deps/*/build
 deps/*/install
+deps/boost_1_64_0
 .vscode
 dist
 _build

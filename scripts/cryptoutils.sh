@@ -24,6 +24,7 @@
 source ./deps/emsdk/emsdk_env.sh
 
 libCryptoUtilsdir="deps/cryptoutils"
+cwd="$PWD"
 
 # Check if CWD has `package.json`, assuring us that it's the root.
 if [[ ! -f package.json ]]
@@ -45,8 +46,8 @@ cd src || exit
 
 echo "Installing libCryptoUtils into ${libCryptoUtilsdir}/install"
 cd ../build || exit
-#if ! emcmake cmake ../src -DCMAKE_INSTALL_PREFIX=../install -DCRYPTOUTILS_BUILD_ARCHIVE=1 -DOPENSSL_ROOT_DIR=/usr/local/opt/openssl -DOPENSSL_INCLUDE_DIR=/usr/local/opt/openssl/include -DOPENSSL_CRYPTO_LIBRARY=/usr/local/opt/openssl/lib -DOPENSSL_LIBRARIES=/usr/local/opt/openssl/lib -DBoost_INCLUDE_DIR=/Users/haliq/Desktop/zkp_research/boost -DBOOST_ROOT=/Users/haliq/Desktop/zkp_research/boost -DBOOST_LIBRARYDIR=/Users/haliq/Desktop/zkp_research/boost/stage/lib
-if ! emcmake cmake ../src -DCMAKE_INSTALL_PREFIX=../install -DCRYPTOUTILS_BUILD_ARCHIVE=1
+if ! emcmake cmake ../src -DCMAKE_INSTALL_PREFIX=../install -DCRYPTOUTILS_BUILD_ARCHIVE=1 -DOPENSSL_ROOT_DIR=/usr/local/opt/openssl -DOPENSSL_INCLUDE_DIR=/usr/local/opt/openssl/include -DOPENSSL_CRYPTO_LIBRARY=/usr/local/opt/openssl/lib -DOPENSSL_LIBRARIES=/usr/local/opt/openssl/lib -DOPENSSL_SSL_LIBRARY=/usr/local/opt/openssl/lib -DBoost_INCLUDE_DIR=$cwd/deps/boost_1_64_0 -DBOOST_ROOT=$cwd/deps/boost_1_64_0 -DBoost_SYSTEM_LIBRARY=$cwd/deps/boost_1_64_0/stage/lib/libboost_system.bc -DBoost_DEBUG=ON -DGMP_INCLUDE_DIR=/usr/local/include -DGMP_LIBRARY=/usr/local/lib/libgmp.a
+#if ! emcmake cmake ../src -DCMAKE_INSTALL_PREFIX=../install -DCRYPTOUTILS_BUILD_ARCHIVE=1
 then
     echo "libCryptoUtils: CMake configuration failed"
     exit 1
