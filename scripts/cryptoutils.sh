@@ -46,14 +46,14 @@ cd src || exit
 
 echo "Installing libCryptoUtils into ${libCryptoUtilsdir}/install"
 cd ../build || exit
-if ! emcmake cmake ../src -DCMAKE_INSTALL_PREFIX=../install -DCRYPTOUTILS_BUILD_ARCHIVE=1 -DOPENSSL_ROOT_DIR=/usr/local/opt/openssl -DOPENSSL_INCLUDE_DIR=/usr/local/opt/openssl/include -DOPENSSL_CRYPTO_LIBRARY=/usr/local/opt/openssl/lib -DOPENSSL_LIBRARIES=/usr/local/opt/openssl/lib -DOPENSSL_SSL_LIBRARY=/usr/local/opt/openssl/lib -DBoost_INCLUDE_DIR=$cwd/deps/boost_1_64_0 -DBOOST_ROOT=$cwd/deps/boost_1_64_0 -DBoost_SYSTEM_LIBRARY=$cwd/deps/boost_1_64_0/stage/lib/libboost_system.bc -DBoost_DEBUG=ON -DGMP_INCLUDE_DIR=/usr/local/include -DGMP_LIBRARY=/usr/local/lib/libgmp.a
-#if ! emcmake cmake ../src -DCMAKE_INSTALL_PREFIX=../install -DCRYPTOUTILS_BUILD_ARCHIVE=1
+if ! emcmake cmake ../src -DCMAKE_INSTALL_PREFIX=../install -DCRYPTOUTILS_BUILD_ARCHIVE=1 -DOPENSSL_ROOT_DIR=/usr/local/opt/openssl@1.1 -DOPENSSL_INCLUDE_DIR=/usr/local/opt/openssl@1.1/include -DOPENSSL_CRYPTO_LIBRARY=/usr/local/opt/openssl@1.1/lib -DOPENSSL_LIBRARIES=/usr/local/opt/openssl@1.1/lib -DOPENSSL_SSL_LIBRARY=/usr/local/opt/openssl@1.1/lib -DBoost_INCLUDE_DIR=$cwd/deps/boost_1_64_0 -DBOOST_ROOT=$cwd/deps/boost_1_64_0 -DBoost_SYSTEM_LIBRARY=$cwd/deps/boost_1_64_0/stage/lib/libboost_system.bc -DGMP_INCLUDE_DIR=/usr/local/include -DGMP_LIBRARY=/usr/local/lib/libgmp.dylib
+#if ! emcmake cmake ../src -DCMAKE_INSTALL_PREFIX=../install -DCRYPTOUTILS_BUILD_ARCHIVE=1 
 then
     echo "libCryptoUtils: CMake configuration failed"
     exit 1
 fi
 
-if ! emmake make -j4 install
+if ! emmake make VERBOSE=1 -j4 install
 then
     echo "libCryptoUtils: build failed"
     exit 1
